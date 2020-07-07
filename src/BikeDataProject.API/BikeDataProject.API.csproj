@@ -4,5 +4,14 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BikeDataProject.Core\BikeDataProject.Core.csproj" />
+    <ProjectReference Include="..\BikeDataProject.Domain\BikeDataProject.Domain.csproj" />
+  </ItemGroup>
+
 
 </Project>
