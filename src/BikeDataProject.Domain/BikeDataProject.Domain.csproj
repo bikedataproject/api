@@ -1,12 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Declarations\" />
-    <Folder Include="Concretes\" />
+    <ProjectReference Include="..\BikeDataProject.Core\BikeDataProject.Core.csproj" />
+    <ProjectReference Include="..\BikeDataProject.Providers.Local.Sql\BikeDataProject.Providers.Local.Sql.csproj" />
   </ItemGroup>
 
 </Project>

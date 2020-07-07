@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BikeDataProject.Core\BikeDataProject.Core.csproj" />
+    <ProjectReference Include="..\BikeDataProject.Domain\BikeDataProject.Domain.csproj" />
   </ItemGroup>
 
 

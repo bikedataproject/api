@@ -1,8 +1,9 @@
 ﻿namespace BikeDataProject.API.Controllers
 {
     using BikeDataProject.API.Controllers.Security;
-    using BikeDataProject.API.SearchParameters;
     using BikeDataProject.Core.Models;
+    using BikeDataProject.Core.SearchParameters;
+    using BikeDataProject.Domain.Declarations;
     using Microsoft.AspNetCore.Mvc;
     using System;
 
@@ -14,6 +15,13 @@
     [ApiController]
     public class SampleController : SecurityController 
     {
+        private readonly ISampleDomain _sampleDomain;
+
+        public SampleController(ISampleDomain _sampleDomain)
+        {
+            this._sampleDomain = _sampleDomain;
+        }
+
         /// <summary>
         /// Gets the sample model.
         /// </summary>
@@ -34,7 +42,7 @@
         [HttpPost]
         public IActionResult GetSampleModel(SampleSearchParameters searchParameters)
         {
-            throw new NotImplementedException();
+            return this.Ok(this._sampleDomain.GetSampleModel(searchParameters));
         }
     }
 }

@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Concretes\" />
-    <Folder Include="Declarations\" />
+    <ProjectReference Include="..\BikeDataProject.Core\BikeDataProject.Core.csproj" />
   </ItemGroup>
 
 </Project>

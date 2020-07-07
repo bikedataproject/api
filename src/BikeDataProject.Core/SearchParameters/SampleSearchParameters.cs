@@ -1,4 +1,4 @@
-﻿namespace BikeDataProject.API.SearchParameters
+﻿namespace BikeDataProject.Core.SearchParameters
 {
     using System;
     using System.Runtime.Serialization;
