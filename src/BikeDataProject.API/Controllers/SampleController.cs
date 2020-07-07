@@ -18,6 +18,7 @@
         /// Gets the sample model.
         /// </summary>
         /// <returns>200 alongside with a sample model.</returns>
+        [Route("[action]/")]
         [HttpGet]
         public IActionResult GetNewSampleModel()
         {
@@ -29,6 +30,7 @@
         /// </summary>
         /// <param name="searchParameters">The search parameters.</param>
         /// <returns>A sample model based on search parameters.</returns>
+        [Route("[action]/")]
         [HttpPost]
         public IActionResult GetSampleModel(SampleSearchParameters searchParameters)
         {
