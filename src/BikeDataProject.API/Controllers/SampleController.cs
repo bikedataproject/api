@@ -5,18 +5,24 @@
     using BikeDataProject.Core.SearchParameters;
     using BikeDataProject.Domain.Declarations;
     using Microsoft.AspNetCore.Mvc;
-    using System;
 
     /// <summary>
     /// Contains the definition for the <see cref="SampleController"/>.
     /// </summary>
     /// <seealso cref="Microsoft.AspNetCore.Mvc.ControllerBase" />
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]/")]
     [ApiController]
     public class SampleController : SecurityController 
     {
+        /// <summary>
+        /// The sample domain.
+        /// </summary>
         private readonly ISampleDomain _sampleDomain;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SampleController"/> class.
+        /// </summary>
+        /// <param name="_sampleDomain">The sample domain.</param>
         public SampleController(ISampleDomain _sampleDomain)
         {
             this._sampleDomain = _sampleDomain;
@@ -26,7 +32,6 @@
         /// Gets the sample model.
         /// </summary>
         /// <returns>200 alongside with a sample model.</returns>
-        [Route("[action]/")]
         [HttpGet]
         public IActionResult GetNewSampleModel()
         {
@@ -38,7 +43,6 @@
         /// </summary>
         /// <param name="searchParameters">The search parameters.</param>
         /// <returns>A sample model based on search parameters.</returns>
-        [Route("[action]/")]
         [HttpPost]
         public IActionResult GetSampleModel(SampleSearchParameters searchParameters)
         {
