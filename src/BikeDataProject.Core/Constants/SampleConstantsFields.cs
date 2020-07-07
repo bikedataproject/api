@@ -3,7 +3,7 @@
     using System;
 
     /// <summary>
-    /// Contains the sample constants.
+    /// Contains the <see cref="SampleConstantsFields"/>.
     /// </summary>
     public static class SampleConstantsFields
     {

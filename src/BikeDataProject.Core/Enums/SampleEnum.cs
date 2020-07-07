@@ -1,7 +1,7 @@
 ﻿namespace BikeDataProject.Core.Enums
 {
     /// <summary>
-    /// Contains the Sample enumeration.
+    /// Contains the <see cref="SampleEnum"/>.
     /// </summary>
     public enum SampleEnum
     {
