@@ -6,7 +6,7 @@
     /// Contains the definition for <see cref="SecurityController"/>.
     /// </summary>
     /// <seealso cref="Microsoft.AspNetCore.Mvc.ControllerBase" />
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class SecurityController : ControllerBase
     {

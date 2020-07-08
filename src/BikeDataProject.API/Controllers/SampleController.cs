@@ -10,7 +10,6 @@
     /// Contains the definition for the <see cref="SampleController"/>.
     /// </summary>
     /// <seealso cref="Microsoft.AspNetCore.Mvc.ControllerBase" />
-    [Route("api/[controller]/[action]/")]
     [ApiController]
     public class SampleController : SecurityController 
     {
