@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
 using System.Linq;
 using System.Threading.Tasks;
 using BikeDataProject.Domain.Concretes;
@@ -10,6 +12,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Server.IIS.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -32,11 +35,16 @@ namespace BikeDataProject.API
             services.AddControllers();
 
             // Scoped permits to dispose the domain at the end of the user request
+            // Database context
+            services.AddScoped<IDbContext>(dbC => new DbContext(this.Configuration.GetConnectionString("PgSqlCS")));
+
             // Domains
             services.AddScoped<ISampleDomain, SampleDomain>();
+            services.AddScoped<IGeometryDomain, GeometryDomain>();
 
             // Repos
             services.AddScoped<ISampleRepository, SampleRepository>();
+            services.AddScoped<IGeometryRepository, GeometryRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
