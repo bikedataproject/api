@@ -3,15 +3,17 @@ using System;
 using BikeDataProject.API.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace BikeDataProject.API.Migrations
 {
     [DbContext(typeof(BikeDataDbContext))]
-    partial class BikeDataDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200713100438_FillUserContributionsTable")]
+    partial class FillUserContributionsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -91,18 +93,7 @@ namespace BikeDataProject.API.Migrations
 
                     b.HasKey("UserContributionId");
 
-                    b.HasIndex("UserId");
-
                     b.ToTable("UserContributions");
-                });
-
-            modelBuilder.Entity("BikeDataProject.API.Domain.UserContribution", b =>
-                {
-                    b.HasOne("BikeDataProject.API.Domain.User", null)
-                        .WithMany("UserContributions")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

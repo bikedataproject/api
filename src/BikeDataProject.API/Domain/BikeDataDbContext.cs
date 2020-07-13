@@ -5,7 +5,8 @@ namespace BikeDataProject.API.Domain
     public class BikeDataDbContext : DbContext
     {
         public DbSet<User> Users {get;set;}
-        public DbSet<Contribution> Contributions{get;set;}
+        public DbSet<Contribution> Contributions {get;set;}
+        public DbSet<UserContribution> UserContributions {get;set;}
 
         private readonly string _connectionInfo;
 
