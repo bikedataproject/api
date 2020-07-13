@@ -28,7 +28,7 @@ namespace BikeDataProject.API
         {
             services.AddControllers();
 
-            services.AddDbContext<BikeDataDbContext>(ctxt => new BikeDataDbContext(Configuration["databaseConnectionInfo"]));
+            services.AddDbContext<BikeDataDbContext>(ctxt => new BikeDataDbContext(Configuration["DatabaseConnectionInfo"]));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
