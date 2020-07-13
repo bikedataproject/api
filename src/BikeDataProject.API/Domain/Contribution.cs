@@ -18,5 +18,7 @@ namespace BikeDataProject.API.Domain
         public byte[] PointsGeom {get;set;}
 
         public DateTime[] PointsTime {get;set;}
+
+        
     }
 }
