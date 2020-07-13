@@ -2,10 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BikeDataProject.Domain.Concretes;
-using BikeDataProject.Domain.Declarations;
-using BikeDataProject.Providers.Local.Sql.Concretes;
-using BikeDataProject.Providers.Local.Sql.Declarations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,13 +26,6 @@ namespace BikeDataProject.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-
-            // Scoped permits to dispose the domain at the end of the user request
-            // Domains
-            services.AddScoped<ISampleDomain, SampleDomain>();
-
-            // Repos
-            services.AddScoped<ISampleRepository, SampleRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
